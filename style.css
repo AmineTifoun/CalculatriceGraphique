@@ -1,0 +1,243 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    
+        max-width: 150vw;
+        height:100vh;
+        display: flex;/* permettre de modifier l'emplacment des elements enfants */
+        justify-content:center;
+        align-items: center;
+        font-family: sans-serif;
+        background: linear-gradient(90deg, rgb(58, 50, 213) 0%, rgba(132,226,244,1) 33%, rgba(0,212,255,1) 100%);        
+}
+.myCalculate{
+    background-color: rgb(12, 163, 245);  
+    display: flex ;
+    flex-direction: column;
+    border-radius: 10px;
+    border:  10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;}
+    
+.screen { /* ECRAN OPERATIONNEL */
+    width: 340px;/*480px;*/
+    height:240px ; /*240px;*/
+    background-color: rgb(161, 243, 243);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Affiche les résultats verticalement */
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.petiteecran { /* ECRAN DE FONCTION */
+    width: 480px;/*480px;*/
+    height:50px ; /*240px;*/
+    background-color: rgb(161, 243, 243);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Affiche les résultats verticalement */
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+
+
+
+.touches{
+    display: grid;
+    grid-template-columns: repeat(5,60px);
+    grid-template-rows: repeat(6,60px);
+    grid-gap: 10px ;
+    font-style: italic;
+}
+
+.logo{
+    float: left;
+    margin-left: 1px;
+    position: relative;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.logo-img{
+    width: 60px;
+    height: auto;
+    top:-1px;
+}
+
+.model{
+    float: right;
+    margin-right:5px;
+    font-family:fantasy;
+    color:rgb(4, 4, 100);
+    font-weight: 550;
+    font-size: larger;
+}
+
+/* CSS */
+.touche {
+  appearance: button;
+  align-items: center;
+  background-color: #FCFCFD;
+  border-radius: 10px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 60px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+ }
+ 
+ .invisible{
+    display: none;
+    transition: all 1s ease;
+    animation: apparition 0.3s ease-in-out;
+ }
+ 
+ .ToucheDim { /* CSS COTE GRAPHIQUE BOUTONS GRAPHIQUE */
+    grid-template-columns: repeat(7,60px);
+    transition: all  ease;
+ }
+
+
+.touche:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.touche:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.touche:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.touche[data-val="13"]{
+    background-color: rgb(7, 92, 250);
+    grid-column: span 2;
+    font-size: 20px;
+    color : white;
+    font-weight: bold ;
+}
+
+.lp{
+    appearance: button;
+    align-items: center;
+    background-color: rgb(28, 43, 250);
+    border-radius: 10px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #f5f5fa;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 130px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    font-weight: bold;
+    grid-row: span 2;
+}
+
+.lp:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
+
+  .touche[data-val="13"]{
+     background-color: rgb(255, 136, 1);
+      grid-column: span 2;
+      font-size: 20px;
+      color : white;
+      font-weight: bold ;
+  }
+
+.touche[data-val="8"]{
+    background-color: rgb(255, 1, 1);
+    font-weight: bold;
+    color : rgb(246, 238, 238);
+}
+
+.touche[data-val="46"]{
+    background-color: rgb(255, 136, 1);
+    font-weight: bold;
+    color : rgb(252, 249, 249);
+}
+
+.touche[data-val="mod"]{
+    background-color: rgb(255, 136, 1);
+    color: #FCFCFD;
+}
+.touche[data-val="_"]{
+
+    background-color: rgb(28, 43, 250);
+    color: #FCFCFD;
+
+}
+.func{ /* boutons GRAPHIQUES ET OPERATIONNEL */
+    background-color: rgb(28, 43, 250);
+    font-weight: bold;
+    color : rgb(252, 249, 249);
+}
+
+.graphDim{ /* ECRAN GRAPHQUE */
+    width: 480px;/*480px;*/
+    height:240px ; /*240px;*/
+    background-color: rgb(161, 243, 243);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Affiche les résultats verticalement */
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+.zoom {
+    transform: scale(0.8);
+}
+
